@@ -19,6 +19,7 @@ app.get('/allergies', Controller.getAllMeds, (req,res) => {
 });
 
 app.use('*', (req,res) => {
+  console.log("not found")
   return res.status(404).sendFile(path.resolve('./client/404.html'));
 });
 

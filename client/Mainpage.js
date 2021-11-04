@@ -22,10 +22,7 @@ const Mainpage = (props) => {
 
   return(
     <div>
-      <div className="nav">
-        <button type="submit" id='inputAllergy'>Enter Your Allergies</button>
-      </div>
-      <div className="primary_buttons">{genMidBody()}</div>
+      <div id="main_categories">{genMidBody()}</div>
     </div>
   );
 };

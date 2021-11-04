@@ -8,7 +8,12 @@ label {
   margin-left: 2em;
   font-size: 25px;
   font-family: 'Montserrat',sans-serif;
-  
+}
+
+#main_categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
  #title {
@@ -19,7 +24,13 @@ label {
   font-family: 'Montserrat',sans-serif;
   margin-top: 50px;
 }
-.primary {
+
+button:hover {
+  border: solid #222222 8px;
+  filter: drop-shadow(10px 10px 10px #666666);
+}
+
+button {
   font-size: 25px;
   font-family: 'Montserrat',sans-serif;
   background-color: coral;
@@ -31,17 +42,6 @@ label {
   height: 200px;
   border: solid black 8px;
   margin: 15px
-}
-
-.primary:hover {
-  border: solid #222222 8px;
-  filter: drop-shadow(10px 10px 10px #666666);
-}
-
-.primary_buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 #inputAllergy {
@@ -58,12 +58,21 @@ label {
   border-radius: 20px;
 }
 
-#inputAllergy:hover {
-  border: solid #222222 8px;
-  filter: drop-shadow(10px 10px 10px #666666);
- }
+#nav_button {
+  font-size: 25px;
+  font-family: 'Montserrat',sans-serif;
+  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 75px;
+  border: solid black 8px;
+  border-radius: 20px;
+}
 
- .nav {
+#nav {
    display: flex;
    justify-content: center;
  }
