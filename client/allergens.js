@@ -88,8 +88,8 @@ const allergens = [
     drugClass: 'PPI'
   },
   {
-    medication: 'Patanol', 
-    drugClass: 'antihistamine'
+    medication: 'Pataday/Olopatadine', 
+    drugClass:  'antihistamine'
   },
   {
     medication: 'Pepcid/Famotidine', 

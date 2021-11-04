@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     let pageContent = [];
     if(this.state.page === 'main') {
-      pageContent = Mainpage();
+      pageContent = <Mainpage />;
     }
 
     if(this.state.page === 'allergies') {

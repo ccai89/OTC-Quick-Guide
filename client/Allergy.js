@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import allergens from './allergens';
 import Checkbox from './Checkbox';
 
 
-class Allergy extends React.Component {
+class Allergy extends Component {
   constructor(props) {
     super(props);
 
@@ -19,25 +19,29 @@ class Allergy extends React.Component {
     const item = e.target.name;
     const isChecked = e.target.checked;
     this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
-
+    console.log(this.state.checkedItems);
   }
 
-
   render() {
-    this.state.checkedItems.forEach((val,key) => console.log(key));
+    const allergies = [];
+    this.state.checkedItems.forEach((val, key) => {
+      if (val) allergies.push(key);
+      console.log(allergies);
+    });
     return (
-      <React.Fragment>
-        {
-          allergens.map(item => (
-            <div className="allergy_list">
+      <div className="allergy_list">
+        <Fragment>
+          {
+            allergens.map(item => (
               <label key={item.medication}>
                 <Checkbox name={item.drugClass} checked={this.state.checkedItems.get(item.drugClass)} onChange={this.handleChange} />
+                <span style={{ marginLeft: '20px' }}></span>
                 {item.medication}
               </label>
-            </div>
-          ))
-        }
-      </React.Fragment>
+            ))
+          }
+        </Fragment>
+      </div>
     );
   }
 }

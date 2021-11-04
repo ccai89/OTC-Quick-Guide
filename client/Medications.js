@@ -1,2 +1,10 @@
 import React from 'react';
-import Prop
+
+const Medications = (props) => {
+
+  return(
+    <div style={{color:'white'}}>1</div>
+  );
+};
+
+export default Medications;
