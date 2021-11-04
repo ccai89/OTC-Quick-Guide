@@ -7,7 +7,7 @@ class Mainpage extends Component {
     super(props);
     this.state = {
       'page': 'main',
-      'height':'200px'
+      'drugClassData': {}
     };
 
     this.selectPage = this.selectPage.bind(this);
@@ -16,42 +16,55 @@ class Mainpage extends Component {
   selectPage(id) {
     const newState = {};
     newState.page = id;
-    newState.height = '50px';
-    this.setState(newState);
+    fetch(id, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(),
+    })
+      .then(res => res.json())
+      .then(data => {
+        newState.drugClassData = data;
+        this.setState(newState);
+      })
+      .catch(err => {
+        console.log("YOU FUCKED UP!");
+      });
   }
 
   genMidBody() {
     const mainObj = [
       {
-        Category: 'pain',
+        Category: '/pain',
         Title: 'General Pain'
       },
       {
-        Category: 'tummy',
+        Category: '/tummy',
         Title: 'Upset Stomach'
       },
       {
-        Category: 'rash',
+        Category: '/rash',
         Title: ' Skin Irritation'
       },
       {
-        Category: 'allergy',
+        Category: '/allergy',
         Title: 'Allergies'
       },
       {
-        Category: 'cough',
+        Category: '/cough',
         Title: 'Cough and Cold'
       },
       {
-        Category: 'zzz',
+        Category: '/zzz',
         Title: ' Sleep Aids'
       },
       {
-        Category: 'eye',
+        Category: '/eye',
         Title: 'Eye and Ear Irritation'
       },
       {
-        Category: 'ouchie',
+        Category: '/ouchie',
         Title: 'Cuts and Scrapes'
       }
     ];
@@ -73,8 +86,7 @@ class Mainpage extends Component {
     let pageContent = [];
     if(this.state.page === 'main') pageContent = this.genMidBody();
     else {
-      console.log(this.state.page);
-      pageContent = <Medication abc = {this.state.page}/>;
+      pageContent = <Medication drugClass = {this.state.drugClassData}/>;
     }
     
     return (
