@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-#title {
+label {
+  margin-left: 25px;
+ }
+ 
+ .allergy_list {
+  margin-left: 2em;
+  font-size: 25px;
+  font-family: 'Montserrat',sans-serif;
+  
+}
+
+ #title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -11,6 +22,7 @@
 .primary {
   font-size: 25px;
   font-family: 'Montserrat',sans-serif;
+  background-color: coral;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +35,7 @@
 
 .primary:hover {
   border: solid #222222 8px;
-  filter: drop-shadow(5px 5px 5px #666666);
+  filter: drop-shadow(10px 10px 10px #666666);
 }
 
 .primary_buttons {
@@ -31,3 +43,28 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+#inputAllergy {
+  font-size: 25px;
+  font-family: 'Montserrat',sans-serif;
+  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 75px;
+  border: solid black 8px;
+  border-radius: 20px;
+}
+
+#inputAllergy:hover {
+  border: solid #222222 8px;
+  filter: drop-shadow(10px 10px 10px #666666);
+ }
+
+ .nav {
+   display: flex;
+   justify-content: center;
+ }
+

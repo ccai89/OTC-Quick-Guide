@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom';
 import styles from './styles.css';
+import Mainpage from './Mainpage';
+import Allergies from './Allergies';
 
 class App extends Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = {
+      'page': 'allergies'
+    };
+    // this.update = this.update.bind(this);
+  }
+
+  // update() {
+  //   const newState = {};
+  //   if(this.state['page'] === 'main')
+  // }
+
+
+
+
   render() {
-    return (
+    let pageContent = [];
+    if(this.state.page === 'main') {
+      pageContent.push(Mainpage());
+    }
+    if(this.state.page === 'allergies') {
+      pageContent = Allergies();
+    }
+    return(
       <div>
-        <div className="primary_buttons">
-          <span className="primary" id="pain">General Pain</span>
-          <span className="primary" id="tummy">Upset Stomach</span>
-          <span className="primary" id="rash">Topical Irritation</span>
-          <span className="primary" id="allergy">Allgeries</span>
-          <span className="primary" id="cough">Cough and Cold</span>
-          <span className="primary" id="zzz">Sleep Aids</span>
-          <span className="primary" id="eye">Eye and Ear Irritation</span>
-          <span className="primary" id="booboo">Cuts and Scrapes</span>
-        </div>
+        {pageContent}
       </div>
     );
   }

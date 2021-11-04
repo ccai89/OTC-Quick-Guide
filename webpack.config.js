@@ -42,11 +42,10 @@ module.exports = {
       publicPath: '/'
     },
     proxy: {
-      '/api/leaders': {
+      '/': {
         target: 'http://localhost:3000',
         secure: false,
       }
     }
   }
-  
 }
