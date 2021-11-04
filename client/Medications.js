@@ -19,6 +19,7 @@ class Medications extends Component{
           <div><strong>Dosing:</strong> {el.directions_s1} {el.extra_info}</div>
           <div>{(el.strength_2) ? <div><strong>Other Strengths:</strong> {el.generic} {el.strength_2} - {el.directions_s2}</div> : <div/>}</div>
           <div>{(el.strength_3) ? <div><strong>Other Strengths:</strong> {el.generic} {el.strength_3} - {el.directions_s3}</div> : <div/>}</div>
+          <div><strong>Indication:</strong> {el.indication}</div>
           <div>{(el.max_dose) ? <div><strong>Max Dose:</strong> {el.max_dose}/day</div> : <div/>}</div>
           <div>{(el.fun_fact) ? <div><strong>Fun Fact:</strong> {el.fun_fact}</div> : <div/>}</div>
         </div>
