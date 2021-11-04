@@ -16,52 +16,52 @@ app.get('/', (req, res) => {
 });
 
 app.get('/allergies', Controller.getAllergiesCI, (req,res) => {
-  console.log("retrieved allergy contradictions",res.locals.allergyCI);
+  console.log("retrieved allergy contradictions");
   return res.status(200).json(res.locals.allergyCI);
 });
 
 app.get('/pain', Controller.getPain , (req,res) => {
-  console.log("retreived pain", res.locals.pain);
+  console.log("retreived pain");
   return res.status(200).json(res.locals.pain);
 });
 
 app.get('/tummy', Controller.getTummy , (req,res) => {
-  console.log("retreived tummy", res.locals.tummy);
+  console.log("retreived tummy");
   return res.status(200).json(res.locals.tummy);
 });
 
 app.get('/rash', Controller.getRash , (req,res) => {
-  console.log("retreived rash", res.locals.rash);
+  console.log("retreived rash");
   return res.status(200).json(res.locals.rash);
 });
 
 app.get('/allergy', Controller.getAllergy , (req,res) => {
-  console.log("retreived allergy", res.locals.allergy);
+  console.log("retreived allergy");
   return res.status(200).json(res.locals.allery);
 });
 
 app.get('/cough', Controller.getCough , (req,res) => {
-  console.log("retreived cough", res.locals.cough);
+  console.log("retreived cough");
   return res.status(200).json(res.locals.cough);
 });
 
 app.get('/zzz', Controller.getZZZ , (req,res) => {
-  console.log("retreived zzz", res.locals.zzz);
+  console.log("retreived zzz");
   return res.status(200).json(res.locals.zzz);
 });
 
 app.get('/eye', Controller.getEye, (req,res) => {
-  console.log("retreived eye", res.locals.eye);
+  console.log("retreived eye");
   return res.status(200).json(res.locals.eye);
 });
 
 app.get('/ouchie', Controller.getOuchie, (req,res) => {
-  console.log("retreived ouchie", res.locals.ouchie);
+  console.log("retreived ouchie");
   return res.status(200).json(res.locals.ouchie);
 });
 
 app.get('/', Controller.getOuchie , (req,res) => {
-  console.log("retreived ouchie", res.locals.ouchie);
+  console.log("retreived ouchie");
   return res.status(200).json(res.locals.ouchie);
 });
 

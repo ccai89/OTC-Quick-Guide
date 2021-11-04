@@ -32,6 +32,10 @@ const allergens = [
     drugClass: 'docusate'
   },
   {
+    medication: 'Cortizone 10/Hydrocortisone', 
+    drugClass: 'corticosteroid'
+  },
+  {
     medication: 'Delsym/Dextromethorphan', 
     drugClass: 'dextromethorphan'
   },
@@ -110,6 +114,10 @@ const allergens = [
   {
     medication: 'Robitussin/Guaifenesin', 
     drugClass: 'guaifenesin'
+  },
+  {
+    medication: 'Sennakot/Senna', 
+    drugClass: 'senna'
   },
   {
     medication: 'Tums/Anti-acid tabs', 

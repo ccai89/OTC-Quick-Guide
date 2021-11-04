@@ -41,7 +41,7 @@ class Mainpage extends Component {
       },
       {
         Category: '/tummy',
-        Title: 'Upset Stomach'
+        Title: 'Upset Stomach / Nausea'
       },
       {
         Category: '/rash',
