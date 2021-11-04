@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const MONGO_URI = 'mongodb+srv://ccai89:codesmith@codesmith.b6x9g.mongodb.net/medicatioDB?retryWrites=true&w=majority';
 
 mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: 'medicatioDB'
 })
@@ -27,6 +28,6 @@ const medSchema = new Schema({
   ailment: String
 });
 
-const Medication = mongoose.model('medication', medSchema);
+const Medication = mongoose.model('medications', medSchema);
 
-module.exports = Medication;
+module.exports = { Medication };

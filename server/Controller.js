@@ -3,10 +3,9 @@ const models = require('./Database');
 const Controller = {};
 
 Controller.getAllMeds = async (req, res, next) => {
+
   try {
-    console.log('started middleware - get all meds');
-    res.locals.medications = "blah";
-    console.log(res.locals.medications);
+    res.locals.medications = await models.Medication.find({});
     return next();
   }
   catch (err) {
