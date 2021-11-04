@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom';
 import styles from './styles.css';
 import Mainpage from './Mainpage';
-import Allergies from './Allergies';
+import Allergy from './Allergy';
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class App extends Component {
     }
 
     if(this.state.page === 'allergies') {
-      pageContent = Allergies();
+      pageContent = <Allergy/>;
     }
 
     return(
