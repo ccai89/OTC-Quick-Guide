@@ -15,9 +15,54 @@ app.get('/', (req, res) => {
   return res.status(200).sendFile(path.resolve(__dirname + './index.html'));
 });
 
-app.get('/allergies', Controller.getAllMeds, (req,res) => {
-  console.log("retrieved medications",res.locals.medications);
-  return res.status(200).json(res.locals.medications);
+app.get('/allergies', Controller.getAllergiesCI, (req,res) => {
+  console.log("retrieved allergy contradictions",res.locals.allergyCI);
+  return res.status(200).json(res.locals.allergyCI);
+});
+
+app.get('/pain', Controller.getPain , (req,res) => {
+  console.log("retreived pain", res.locals.pain);
+  return res.status(200).json(res.locals.pain);
+});
+
+app.get('/tummy', Controller.getTummy , (req,res) => {
+  console.log("retreived tummy", res.locals.tummy);
+  return res.status(200).json(res.locals.tummy);
+});
+
+app.get('/rash', Controller.getRash , (req,res) => {
+  console.log("retreived rash", res.locals.rash);
+  return res.status(200).json(res.locals.rash);
+});
+
+app.get('/allergy', Controller.getAllergy , (req,res) => {
+  console.log("retreived allergy", res.locals.allergy);
+  return res.status(200).json(res.locals.allery);
+});
+
+app.get('/cough', Controller.getCough , (req,res) => {
+  console.log("retreived cough", res.locals.cough);
+  return res.status(200).json(res.locals.cough);
+});
+
+app.get('/zzz', Controller.getZZZ , (req,res) => {
+  console.log("retreived zzz", res.locals.zzz);
+  return res.status(200).json(res.locals.zzz);
+});
+
+app.get('/eye', Controller.getEye, (req,res) => {
+  console.log("retreived eye", res.locals.eye);
+  return res.status(200).json(res.locals.eye);
+});
+
+app.get('/ouchie', Controller.getOuchie, (req,res) => {
+  console.log("retreived ouchie", res.locals.ouchie);
+  return res.status(200).json(res.locals.ouchie);
+});
+
+app.get('/', Controller.getOuchie , (req,res) => {
+  console.log("retreived ouchie", res.locals.ouchie);
+  return res.status(200).json(res.locals.ouchie);
 });
 
 app.use('*', (req,res) => {

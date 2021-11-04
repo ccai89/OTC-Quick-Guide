@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Medications = (props) => {
-
-  return(
-    <div style={{color:'white'}}>1</div>
-  );
+class Medications extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+  render() {
+    return(
+      <div>{this.props.abc}</div>
+    );
+  }
 };
 
 export default Medications;

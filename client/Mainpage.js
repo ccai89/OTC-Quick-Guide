@@ -6,7 +6,8 @@ class Mainpage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      'page': 'main'
+      'page': 'main',
+      'height':'200px'
     };
 
     this.selectPage = this.selectPage.bind(this);
@@ -14,9 +15,9 @@ class Mainpage extends Component {
 
   selectPage(id) {
     const newState = {};
-    if (this.state['page'] === id) {
-      newState['page'] = id;
-    }
+    newState.page = id;
+    newState.height = '50px';
+    this.setState(newState);
   }
 
   genMidBody() {
@@ -50,7 +51,7 @@ class Mainpage extends Component {
         Title: 'Eye and Ear Irritation'
       },
       {
-        Category: 'booboo',
+        Category: 'ouchie',
         Title: 'Cuts and Scrapes'
       }
     ];
@@ -59,7 +60,7 @@ class Mainpage extends Component {
         <Fragment>
           {
             mainObj.map(el => {
-              return <button id={el.Category} onClick={this.selectPage(el.Category)} className="primary">{el.Title}</button>;
+              return <button id={el.Category} onClick={() => this.selectPage(el.Category)} className="primary" style = {{height:`${this.state.height}`}}> {el.Title}</button>;
             })
           }
         </Fragment>
@@ -67,10 +68,15 @@ class Mainpage extends Component {
     );
   }
 
+
   render() {
     let pageContent = [];
     if(this.state.page === 'main') pageContent = this.genMidBody();
-
+    else {
+      console.log(this.state.page);
+      pageContent = <Medication abc = {this.state.page}/>;
+    }
+    
     return (
       <div>
         {pageContent}
