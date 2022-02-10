@@ -13,7 +13,9 @@ class Mainpage extends Component {
     this.selectPage = this.selectPage.bind(this);
   }
 
+  
   selectPage(id) {
+    let timeX = performance.now();
     const newState = {};
     newState.page = id;
     fetch(id, {
@@ -23,7 +25,11 @@ class Mainpage extends Component {
       },
       body: JSON.stringify(),
     })
-      .then(res => res.json())
+      .then(res => {
+        timeX -= performance.now();
+        console.log({time:timeX});
+        res.json();
+      })
       .then(data => {
         newState.drugClassData = data;
         this.setState(newState);
